@@ -1,0 +1,110 @@
+.ions {
+
+  .G-container {
+    position: relative;
+    height: 800px;
+    background-image: url('/src/assets/img/ions.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    font-weight: 600;
+    color: #fff;
+    font-size: 21.86px;
+    text-align: center;
+  }
+
+  .ion-stats {
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 234px;
+      height: 234px;
+      background-image: url("/src/assets/icons/star.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      img {
+        position: absolute;
+      }
+
+
+      &:first-child {
+        top: 117px;
+        left: -138px;
+        z-index: 1;
+        background-image: url("/src/assets/icons/star2.svg");
+
+        .plus-small {
+          width: 21px;
+          height: 21px;
+          top: 39px;
+          right: 80px;
+        }
+
+        .plus-big {
+          top: 52px;
+          left: 70px;
+        }
+      }
+
+      &:last-child {
+
+        .minus-small-2 {
+          width: 22px;
+          height: 22px;
+          top: 32px;
+          left: 94px;
+        }
+
+        .minus-small {
+          width: 28px;
+          height: 28px;
+          top: 70px;
+          left: 62px;
+        }
+
+        .minus-big {
+          width: 47px;
+          height: 47px;
+          top: 53px;
+          right: 63px;
+        }
+
+      }
+
+    }
+
+    &__title,
+    &__text {
+      font-family: var(--main-font);
+      color: var(--white);
+    }
+
+    &__title {
+      margin-top: 50px;
+      font-weight: 600;
+      font-size: 25.26px;
+      line-height: 120%;
+    }
+
+    &__text {
+      margin-top: 3px;
+      font-weight: 500;
+      font-size: 19.82px;
+      line-height: 120%;
+    }
+
+  }
+
+}

@@ -37,6 +37,8 @@
       width: 180px;
       height: 180px;
       background-image: url("/src/assets/icons/star.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     &__text {

@@ -1,0 +1,57 @@
+.motor {
+
+  .G-container {
+    position: relative;
+    height: 800px;
+    background-image: url('/src/assets/img/motor.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: right;
+  }
+
+  &__title,
+  &__sub-title {
+    font-family: var(--main-font);
+    font-weight: 600;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 45.35px;
+    line-height: 122%;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    max-width: 820px;
+    justify-self: end;
+  }
+
+  &__sub-title {
+    margin-top: 13px;
+    font-size: 34.87px;
+    line-height: 120%;
+    color: var(--light-gray)
+  }
+
+  &__wrapper-text {
+    right: 46px;
+    bottom: 38px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 180px;
+    height: 180px;
+    background-image: url("/src/assets/icons/star.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    font-weight: 600;
+    color: #fff;
+    font-size: 21.86px;
+    text-align: center;
+  }
+}
