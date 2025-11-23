@@ -1,0 +1,96 @@
+.super-light {
+
+  .G-container {
+    position: relative;
+    padding-top: 35px;
+    padding-bottom: 0;
+  }
+
+  &__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 70px;
+  }
+
+  .content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 443px;
+
+    &__super-light {
+      align-self: start;
+      margin-left: 80px;
+      margin-top: -35px;
+      height: calc(100% + 35px);
+    }
+
+    &__wrapper-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-15deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 180px;
+      height: 180px;
+      background-image: url("/src/assets/icons/star.svg");
+    }
+
+    &__text {
+      font-family: var(--main-font);
+      font-weight: 600;
+      color: #fff;
+      font-size: 21.86px;
+      text-align: center;
+    }
+
+    &__column.right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+    }
+
+    &__title,
+    &__description {
+      color: var(--white);
+    }
+
+    &__title {
+      max-width: 250px;
+      font-family: var(--main-font);
+      font-weight: 600;
+      font-size: 60.45px;
+      line-height: 120%;
+      text-transform: uppercase;
+    }
+
+    &__description {
+      text-align: center;
+      font-family: var(--co-main-font);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 167%;
+    }
+
+    &__bottom-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--main-font);
+      font-weight: 600;
+      background-color: var(--white);
+      font-size: 27.73px;
+      line-height: 127%;
+      color: var(--dark-gray);
+      padding: 10px 29px;
+      border-radius: 60px;
+    }
+
+  }
+
+}

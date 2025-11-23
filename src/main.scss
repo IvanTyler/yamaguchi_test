@@ -13,6 +13,14 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+  background-color: #A29C9A;
+  border-radius: 70px;
+  padding: 52px;
+}
+
+.main {
+  display: grid;
+  gap: 640px;
 }
 
 
@@ -20,8 +28,11 @@ body {
   --main-font: 'EuclidCircularA';
   --co-main-font: 'Montserrat';
   --transitionTime: .3s;
+
+  --dark-gray: #4B4B4B;
+  --white: #fff;
 }
 
-@import url("assets/fonts/EuclidCircular/EuclidCircularA.scss");
-@import url("assets/fonts/Montserrat/Montserrat.scss");
+@import url("/src/assets/fonts/EuclidCircular/EuclidCircularA.scss");
+@import url("/src/assets/fonts/Montserrat/Montserrat.scss");
 
