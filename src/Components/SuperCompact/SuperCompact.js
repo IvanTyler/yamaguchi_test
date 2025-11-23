@@ -4,22 +4,22 @@ import './SuperCompact.scss';
 
 export function SuperCompact() {
     return `
-        <section class="Super-compact" id="3">
+        <section class="super-compact" id="3">
             <div class="G-container">
-                <img src="/src/assets/img/gradient-2.png" alt="gradient-2" class="gradient-2" />
+                <img src="/src/assets/img/gradient-2.png" alt="gradient-2" class="gradient" />
                 <div class="content">
-                    <div class="left">
-                        <img class="fen-super-compact" src="/src/assets/img/fen-super-compact.png" alt="fen-super-compact" />
-                        <img class="fen-super-compact" src="/src/assets/img/packet.png" alt="packet" />
+                    <div class="content__column left">
+                        <img class="content__fen" src="/src/assets/img/fen-super-compact.png" alt="fen-super-compact" />
+                        <img class="content__packet" src="/src/assets/img/packet.png" alt="packet" />
                     </div>
-                    <div class="right">
-                        <h2 class="title">супер- компактный</h2>
-                        <p class="description">
+                    <div class="content__column right">
+                        <h2 class="content__title">супер- компактный</h2>
+                        <p class="content__description">
                             Благодаря складной конструкции — он легко убирается в сумочку и его
                             можно брать в путешествия
                         </p>
-                        <div class="wrapper-img">
-                            <img class="fen-super-compact" src="/src/assets/img/super-compact.png" alt="super-compact" />
+                        <div class="content__wrapper-img">
+                            <img class="content__image" src="/src/assets/img/super-compact.png" alt="content__image" />
                         </div>
                     </div>
                 </div>
