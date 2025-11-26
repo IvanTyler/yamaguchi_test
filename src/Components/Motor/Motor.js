@@ -2,7 +2,11 @@
 import './Motor.scss';
 
 export function Motor() {
-    return `
+    const html = document.createElement('nav');
+    html.classList.add('motor');
+    html.id = "4";
+
+    html.innerHTML = `
         <section class="motor" id="4">
             <div class="G-container">
                 <h2 class="motor__title">
@@ -15,4 +19,6 @@ export function Motor() {
             </div>
         </section>
     `;
+
+    return html;
 }

@@ -1,0 +1,90 @@
+.menu-navigation {
+  position: fixed;
+  left: 0;
+  top: calc(50% - 303px);
+  z-index: 1000;
+  left: -580px;
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 706px;
+    height: 706px;
+    border-radius: 50%;
+    border: #625B56 10px solid;
+    transition: transform 0.5s ease;
+
+    .menu-navigation-list {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      $item-count: 5;
+      $radius: 303px; // Уменьшил радиус для текста
+      $start-angle: -45deg;
+      $end-angle: 45deg;
+
+      &__item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background: #746D68;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 16px 14px 30.7px 0 #625856;
+        color: white;
+        text-align: center;
+        transform: translate(-50%, -50%);
+
+        .icon {
+          width: 50px;
+          height: 50px;
+          background-color: #ADACAC;
+          margin-bottom: 2px;
+        }
+
+        .label {
+          font-size: 9px;
+          line-height: 1.1;
+          max-width: 70px;
+        }
+
+        // Изначальное позиционирование на правой половине
+        @for $i from 1 through $item-count {
+          &:nth-child(#{$i}) {
+            $angle: $start-angle + (($end-angle - $start-angle) / ($item-count - 1)) * ($i - 1);
+            transform: translate(20%, -75%) rotate($angle) translate($radius) rotate(-$angle);
+          }
+        }
+      }
+
+      &__item.active {
+        width: 100px;
+        height: 100px;
+        background-color: #DBDBDB;
+        color: #726965;
+        z-index: 10;
+
+        .icon {
+          width: 60px;
+          height: 60px;
+          background-color: #726965;
+        }
+
+        .label {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
