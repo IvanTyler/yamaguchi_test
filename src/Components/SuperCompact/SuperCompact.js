@@ -5,7 +5,7 @@ import './SuperCompact.scss';
 export function SuperCompact() {
     const html = document.createElement('section');
     html.classList.add('super-compact');
-    html.id = "3";
+    html.id = "slide-3";
 
     html.innerHTML = `
         <div class="G-container">

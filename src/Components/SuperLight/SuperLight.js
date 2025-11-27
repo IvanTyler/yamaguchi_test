@@ -5,7 +5,7 @@ import './SuperLight.scss';
 export function SuperLight() {
     const html = document.createElement('section');
     html.classList.add('super-light');
-    html.id = "2";
+    html.id = "slide-2";
 
     html.innerHTML = `
         <div class="G-container">

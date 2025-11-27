@@ -4,7 +4,7 @@ import './Ions.scss';
 export function Ions() {
     const html = document.createElement('section');
     html.classList.add('ions');
-    html.id = "5";
+    html.id = "slide-5";
 
     html.innerHTML = `
         <div class="G-container">

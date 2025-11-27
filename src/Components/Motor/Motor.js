@@ -2,9 +2,9 @@
 import './Motor.scss';
 
 export function Motor() {
-    const html = document.createElement('nav');
+    const html = document.createElement('section');
     html.classList.add('motor');
-    html.id = "4";
+    html.id = "slide-4";
 
     html.innerHTML = `
         <section class="motor" id="4">

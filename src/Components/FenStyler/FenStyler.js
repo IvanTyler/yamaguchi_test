@@ -4,7 +4,7 @@ import './FenStyler.scss';
 export function FenStyler() {
     const html = document.createElement('section');
     html.classList.add('fen-styler');
-    html.id = "1";
+    html.id = "slide-1";
 
     html.innerHTML = `
         <div class="G-container">

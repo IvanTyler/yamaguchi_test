@@ -3,7 +3,7 @@
   left: 0;
   top: calc(50% - 303px);
   z-index: 1000;
-  left: -580px;
+  left: -560px;
 
   .circle {
     display: flex;
@@ -22,8 +22,8 @@
 
       $item-count: 5;
       $radius: 303px; // Уменьшил радиус для текста
-      $start-angle: -45deg;
-      $end-angle: 45deg;
+      $start-angle: -40deg;
+      $end-angle: 40deg;
 
       &__item {
         position: absolute;
@@ -33,8 +33,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 80px;
-        height: 80px;
+        width: 74px;
+        height: 74px;
         background: #746D68;
         border-radius: 50%;
         cursor: pointer;
@@ -47,8 +47,8 @@
         transform: translate(-50%, -50%);
 
         .icon {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           background-color: #ADACAC;
           margin-bottom: 2px;
         }
@@ -60,17 +60,29 @@
         }
 
         // Изначальное позиционирование на правой половине
-        @for $i from 1 through $item-count {
-          &:nth-child(#{$i}) {
-            $angle: $start-angle + (($end-angle - $start-angle) / ($item-count - 1)) * ($i - 1);
-            transform: translate(20%, -75%) rotate($angle) translate($radius) rotate(-$angle);
-          }
+        //@for $i from 1 through $item-count {
+        //  &:nth-child(#{$i}) {
+        //    $angle: $start-angle + (($end-angle - $start-angle) / ($item-count - 1)) * ($i - 1);
+        //    transform: translate(22%, -75%) rotate($angle) translate($radius) rotate(-$angle);
+        //  }
+        //}
+
+        &:nth-child(4) .icon {
+          width: 54px;
+          height: 54px;
+        }
+
+        &:first-child .icon {
+          transform: rotate(40deg);
+        }
+        &:last-child .icon {
+          transform: rotate(-40deg);
         }
       }
 
       &__item.active {
-        width: 100px;
-        height: 100px;
+        width: 103px;
+        height: 103px;
         background-color: #DBDBDB;
         color: #726965;
         z-index: 10;
@@ -79,6 +91,11 @@
           width: 60px;
           height: 60px;
           background-color: #726965;
+        }
+
+        &:nth-child(4) .icon {
+          width: 76px;
+          height: 76px;
         }
 
         .label {
