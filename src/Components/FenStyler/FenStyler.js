@@ -4,6 +4,8 @@ import './FenStyler.scss';
 export function FenStyler() {
     const html = document.createElement('section');
     html.classList.add('fen-styler');
+    html.classList.add('slide');
+
     html.id = "slide-1";
 
     html.innerHTML = `

@@ -5,6 +5,8 @@ import './SuperCompact.scss';
 export function SuperCompact() {
     const html = document.createElement('section');
     html.classList.add('super-compact');
+    html.classList.add('slide');
+
     html.id = "slide-3";
 
     html.innerHTML = `

@@ -4,6 +4,8 @@ import './Motor.scss';
 export function Motor() {
     const html = document.createElement('section');
     html.classList.add('motor');
+    html.classList.add('slide');
+
     html.id = "slide-4";
 
     html.innerHTML = `

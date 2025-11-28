@@ -46,14 +46,35 @@ export function MenuNavigation() {
     const items = html.querySelectorAll('.menu-navigation-list__item');
     const circle = html.querySelector('.circle');
 
+    let isManualSwitch = false;
+
+    document.addEventListener('scroll', function () {
+        if (isManualSwitch) return;
+
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach((slide, index) => {
+            const offset = index === slides.length - 1 ? -120 : 0;
+
+            if (slide.getBoundingClientRect().top + offset <= 0 && slide.getBoundingClientRect().bottom >= 0) {
+                activateItem(index);
+            }
+        });
+    });
+
     const centerIndex = Math.floor(menuItems.length / 2);
     activateItem(centerIndex);
 
     items.forEach(item => {
         item.addEventListener('click', (e) => {
             const index = parseInt(e.currentTarget.dataset.index);
-            moveToSlide(item.id)
+
+            isManualSwitch = true;
+            moveToSlide(item.id);
             activateItem(index);
+
+            setTimeout(() => {
+                isManualSwitch = false;
+            }, 1000);
         });
     });
 
@@ -69,14 +90,10 @@ export function MenuNavigation() {
         const currentActiveAngle = startAngle + angleStep * activeIndex;
         const targetRotation = 0 - currentActiveAngle;
 
-        console.log('targetRotation', targetRotation)
-
         circle.style.transform = `rotate(${targetRotation}deg)`;
 
-        // КОМПЕНСАЦИЯ ВРАЩЕНИЯ ДЛЯ КАЖДОГО ЭЛЕМЕНТА
         items.forEach((item, index) => {
             const elementAngle = startAngle + angleStep * index;
-            // Компенсируем вращение круга, чтобы элементы всегда были прямо
             const compensation = -targetRotation;
             item.style.transform = `translate(22%, -75%) rotate(${elementAngle}deg) translate(303px) rotate(${compensation}deg)`;
         });
@@ -86,15 +103,20 @@ export function MenuNavigation() {
         const slide = document.querySelector(`#slide-${id}`);
         if (slide) {
             const elementPosition = slide.getBoundingClientRect().top + window.scrollY;
+            const offset = id === '5' ? -120 : -30;
             window.scrollTo({
-                top: elementPosition - 50,
+                top: elementPosition + offset,
                 behavior: 'smooth'
             });
         }
     }
 
     setTimeout(() => {
+        isManualSwitch = true;
         moveToSlide('3');
+        setTimeout(() => {
+            isManualSwitch = false;
+        }, 1000);
     }, 100);
 
     return html;

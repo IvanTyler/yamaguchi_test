@@ -26,6 +26,8 @@ function initApp() {
     main.append(Motor())
     main.append(Ions())
 
+    const slides = document.querySelectorAll('.slide');
+
 
 }
 
