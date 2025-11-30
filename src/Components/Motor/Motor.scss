@@ -3,7 +3,7 @@
   .G-container {
     position: relative;
     height: 800px;
-    background-image: url('/src/assets/img/motor.png');
+    background-image: url('/public/assets/img/motor.png');
     background-repeat: no-repeat;
     background-size: cover;
     text-align: right;
@@ -42,7 +42,7 @@
     text-align: center;
     width: 180px;
     height: 180px;
-    background-image: url("/src/assets/icons/star.svg");
+    background-image: url("/public/assets/icons/star.svg");
     background-repeat: no-repeat;
     background-size: cover;
   }

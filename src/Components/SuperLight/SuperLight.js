@@ -11,13 +11,13 @@ export function SuperLight() {
 
     html.innerHTML = `
         <div class="G-container">
-            <img src="/src/assets/img/gradient-3.png" alt="gradient-3" class="super-light__gradient" />
+            <img src="/assets/img/gradient-3.png" alt="gradient-3" class="super-light__gradient" />
             <div class="content">
                 <div class="content__column left">
                     <div class="content__wrapper-text">
                         <span class="content__text">Не тяжелее чашки кофе</span>
                     </div>
-                    <img src="/src/assets/img/super-light.png" alt="" class="content__super-light" />
+                    <img src="/assets/img/super-light.png" alt="" class="content__super-light" />
                 </div>
                 <div class="content__column right">
                     <h2 class="content__title">супер-лёгкий</h2>

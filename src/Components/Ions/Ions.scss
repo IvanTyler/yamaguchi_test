@@ -3,7 +3,7 @@
   .G-container {
     position: relative;
     height: 800px;
-    background-image: url('/src/assets/img/ions.png');
+    background-image: url('/public/assets/img/ions.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -30,7 +30,7 @@
       text-align: center;
       width: 234px;
       height: 234px;
-      background-image: url("/src/assets/icons/star.svg");
+      background-image: url("/public/assets/icons/star.svg");
       background-repeat: no-repeat;
       background-size: cover;
 
@@ -43,7 +43,7 @@
         top: 117px;
         left: -138px;
         z-index: 1;
-        background-image: url("/src/assets/icons/star2.svg");
+        background-image: url("/public/assets/icons/star2.svg");
 
         .plus-small {
           width: 21px;
