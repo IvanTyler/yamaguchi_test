@@ -1,0 +1,38 @@
+.feature-card {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 18px;
+  padding: 12px 14px;
+  border-radius: 60px;
+  background-color: var(--grey-pill);
+
+  @media (max-width: 340px) {
+    width: 100%;
+  }
+
+  .icon {
+    font-size: clamp(25px, 7vw, 45px);
+    background-color: var(--grey-dark);
+  }
+
+  &__wrapper-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(60px, 5.28vw, 76px);
+    min-width: clamp(60px, 5.28vw, 76px);
+    border-radius: 50%;
+    border: solid 2px var(--grey-dark);
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: clamp(19px, 1.35vw, 26px);
+    line-height: 1.27;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--grey-dark);
+  }
+}

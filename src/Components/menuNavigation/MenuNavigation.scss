@@ -1,0 +1,126 @@
+.menu-navigation {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  // Центр колеса стоит на 158px левее края слайда (по макету).
+  left: -418px;
+  width: 580px;
+  height: 580px;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  // Колесо: при смене активного пункта поворачивается целиком,
+  // поэтому меню именно прокручивается, без прыжков отдельных иконок.
+  .circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 11px solid var(--grey-dark);
+    border-radius: 50%;
+    box-shadow: inset 5px 7px 3.8px rgba(0, 0, 0, 0.26);
+    transform: rotate(var(--rot, 0deg));
+    transition: transform 0.5s ease;
+  }
+
+  .menu-navigation-list {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    // Пункты жёстко закреплены на полосе колеса: --a — угол пункта,
+    // --r — радиус полосы (осевая линия обводки).
+    &__item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--a, 0deg)) translateX(var(--r, 276.5px));
+      pointer-events: auto;
+
+      &.active {
+        z-index: 10;
+      }
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 74px;
+      height: 74px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background-color: var(--grey-mobile);
+      color: var(--grey-icon);
+      box-shadow: 16px 14px 30.7px 0 #625856;
+      cursor: pointer;
+      // Компенсируем поворот колеса и угла пункта — иконка стоит прямо.
+      transform: rotate(calc(-1 * var(--a, 0deg) - var(--rot, 0deg)));
+      transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease,
+        color 0.3s ease;
+
+      .icon {
+        width: var(--iw, 40px);
+        height: var(--ih, 40px);
+        transition: width 0.3s ease, height 0.3s ease;
+      }
+
+      &:hover {
+        background-color: var(--grey-page);
+      }
+
+      &:focus-visible {
+        outline: 3px solid var(--white);
+        outline-offset: 4px;
+      }
+    }
+
+    // Селектор записан целиком: вложенный &__button внутри &__item.active
+    // подставил бы внешний .menu-navigation и правило бы не сработало.
+    &__item.active .menu-navigation-list__button {
+      width: 103px;
+      height: 103px;
+      background-color: var(--grey-pill);
+      color: var(--grey-icon-active);
+
+      // У активного пункта иконка крупнее — размеры тоже из макета.
+      .icon {
+        width: var(--iaw, 60px);
+        height: var(--iah, 60px);
+      }
+    }
+
+    // Подпись горизонтальная: гасим поворот пункта и колеса.
+    .desc {
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 18px);
+      width: max-content;
+      white-space: pre-line;
+      transform: translateY(-50%) rotate(calc(-1 * var(--a, 0deg) - var(--rot, 0deg)));
+      transform-origin: 0 50%;
+      font-family: var(--main-font);
+      font-weight: 600;
+      font-size: clamp(16px, 1.35vw, 26px);
+      line-height: 1.27;
+      letter-spacing: var(--tracking-tight);
+      text-transform: uppercase;
+      color: var(--white);
+      // Тень подписи из макета: drop shadow 4/4, blur 13, чёрный 25%.
+      text-shadow: 4px 4px 13px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    &__item.active .desc {
+      opacity: 1;
+    }
+  }
+}

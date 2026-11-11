@@ -1,0 +1,190 @@
+.fen-styler {
+  margin-top: 85px;
+
+  @media (max-width: 500px) {
+    margin-top: 0;
+  }
+
+  .G-container {
+    position: relative;
+    display: grid;
+
+    @media (max-width: 900px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 500px) {
+      border-radius: 0;
+      padding-left: 0;
+      padding-right: 0;
+      background: linear-gradient(var(--grey-light), var(--grey-mobile));
+    }
+  }
+
+  // Градиент из макета: три размытых эллипса (blur 334) вместо PNG —
+  // белый, #F5D4AC и #FF976A. Цвета и прозрачности сняты с прежней картинки.
+  &__gradient {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        34% 30% at 50% 22%,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      radial-gradient(
+        26% 24% at 26% 34%,
+        rgba(235, 206, 177, 0.5) 0%,
+        rgba(235, 206, 177, 0) 100%
+      ),
+      radial-gradient(
+        22% 20% at 78% 64%,
+        rgba(240, 153, 109, 0.4) 0%,
+        rgba(240, 153, 109, 0) 100%
+      );
+    pointer-events: none;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    position: relative;
+    justify-self: center;
+    text-align: center;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: clamp(25px, 2.5vw, 48px);
+    line-height: 1.01;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: var(--dark-gray);
+  }
+
+  .content {
+    position: relative;
+    display: grid;
+    grid-template-areas: 'left center right';
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: clamp(17px, 3vw, 32px);
+
+    @media (max-width: 900px) {
+      grid-template-areas:
+        'center center'
+        'left right';
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(10px, 2vw, 20px);
+    }
+
+    &__wrapper-image {
+      width: 100%;
+      border-radius: 32.91px;
+      box-shadow: 15.63px 13.17px 24.68px -4.94px rgba(65, 60, 57, 0.21);
+    }
+
+    &__picture {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 32.91px;
+    }
+
+    &__column.left,
+    &__column.right {
+      // В макете девушки развёрнуты зеркально — отражаем фото по горизонтали.
+      .content__image {
+        transform: scaleX(-1);
+      }
+    }
+
+    &__column {
+      display: grid;
+      gap: 20px;
+    }
+
+    &__column.left {
+      grid-area: left;
+
+      .dark {
+        justify-self: start;
+        align-self: end;
+        background-color: var(--dark-gray);
+        color: var(--white);
+      }
+    }
+
+    &__column.center {
+      grid-area: center;
+      // Тот же шаг, что и паддинг контейнера clamp(24px, 2.7vw, 52px), только наружу.
+      margin-bottom: clamp(-52px, -2.7vw, -24px);
+
+      .content__wrapper-image {
+        border-radius: 0;
+        box-shadow: 0 0 0;
+      }
+
+      .light {
+        justify-self: center;
+        background-color: var(--white);
+        color: var(--dark-gray);
+        // Плашка «2 в 1» в макете 161x74: радиус 50 и отступы 10/30.
+        border-radius: 50px;
+        padding-inline: clamp(18px, 1.56vw, 30px);
+        font-size: clamp(34px, 2.76vw, 53px);
+        line-height: 1.01;
+      }
+    }
+
+    &__head-block {
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 34px;
+      padding: 10px clamp(18px, 1.46vw, 28px);
+      font-family: var(--main-font);
+      font-weight: 600;
+      font-size: clamp(17px, 1.45vw, 28px);
+      line-height: 1.27;
+      letter-spacing: var(--tracking-tight);
+      box-shadow: 16px 13px 25px rgba(65, 60, 57, 0.21);
+    }
+
+    &__column.right {
+      grid-area: right;
+
+      .light {
+        justify-self: end;
+        align-self: end;
+        background-color: var(--white);
+        color: var(--dark-gray);
+      }
+    }
+
+    &__column.left,
+    &__column.right {
+      @media (max-width: 900px) {
+        position: relative;
+        gap: 0;
+        margin-top: -150px;
+
+        .dark,
+        .light {
+          position: relative;
+          justify-self: center;
+          margin-bottom: -60px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        margin-top: -85px;
+      }
+    }
+  }
+}
