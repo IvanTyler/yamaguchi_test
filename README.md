@@ -44,6 +44,4 @@ public/assets/             шрифты, иконки, картинки
 
 Изображения выгружены из макета в WebP с прозрачностью (качество 90), шрифты — Euclid Circular A и Montserrat, только используемые начертания в woff2 + woff.
 
-## Демо
-
-<!-- Ссылка на деплой (Vercel / GitHub Pages): -->
+## Демо https://yamaguchi-test.vercel.app/
